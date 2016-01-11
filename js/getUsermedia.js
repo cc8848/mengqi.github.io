@@ -12,7 +12,7 @@ button.onclick = function() {
 };
 
 var constraints = {
-  audio: false,
+  audio: true,
   video: true
 };
 
