@@ -37,6 +37,6 @@ function convertCanvasToImage() {
 }
 convertCanvasToImage()
 dlButton.onclick = function(){
-	var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");   
+	var image = canvas.toDataURL("image/png")   
     window.location.href=image;
 }
