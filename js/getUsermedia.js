@@ -26,3 +26,12 @@ function errorCallback(error) {
 }
 navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia;
 navigator.getUserMedia(constraints, successCallback, errorCallback);
+
+function convertCanvasToImage(canvas) {
+	var image = new Image();
+	image.src = canvas.toDataURL("image/png");
+	var aImg = document.createElement('img');
+	aImg.src = image.src;
+	document.body.appendChild(aImg)
+}
+convertCanvasToImage(canvas)
