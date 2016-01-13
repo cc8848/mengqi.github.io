@@ -1,7 +1,8 @@
 
 var video = document.querySelector('video');
 var canvas = window.canvas = document.querySelector('canvas');
-var dlButton = document.getElementById("downloadImageBtn");  
+var imgdata=document.getElementById("imgdata");
+imgdata.value = ''
 canvas.width = 480;
 canvas.height = 360;
 
@@ -10,6 +11,7 @@ button.onclick = function() {
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
   canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+  convertCanvasToImage(canvas)
 };
 
 var constraints = {
@@ -28,9 +30,8 @@ function errorCallback(error) {
 navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia;
 navigator.getUserMedia(constraints, successCallback, errorCallback);
 
-function convertCanvasToImage() {
-	var image = new Image();
-	image.src = canvas.toDataURL("image/png");
-	return image;
+
+function convertCanvasToImage(oCanvas) {
+  imgdata.value=oCanvas.toDataURL();
+  console.log(imgdata.value)
 }
-convertCanvasToImage()
