@@ -31,12 +31,6 @@ navigator.getUserMedia(constraints, successCallback, errorCallback);
 function convertCanvasToImage() {
 	var image = new Image();
 	image.src = canvas.toDataURL("image/png");
-	var aImg = document.createElement('img');
-	aImg.src = image.src;
-	document.body.appendChild(aImg)
+	return image;
 }
 convertCanvasToImage()
-dlButton.onclick = function(){
-	var image = canvas.toDataURL("image/png")   
-    window.location.href=image;
-}

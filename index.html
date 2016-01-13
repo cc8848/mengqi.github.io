@@ -1,16 +1,12 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-
-  <meta charset="utf-8">
-  <meta name="description" content="WebRTC code samples">
-  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
-  <title>getUserMedia to canvas</title>
-  <link rel="stylesheet" href="css/getUsermedia.css">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+    <link rel="stylesheet" href="css/getUsermedia.css">
 </head>
 
 <body>
-
   <div id="container">
 
     <h1><a href="#" title="WebRTC samples homepage"></a> <span>getUserMedia canvas</span></h1>
@@ -18,11 +14,25 @@
     <video autoplay></video>
     <button>Take snapshot</button>
     <canvas></canvas>
-     <button id="downloadImageBtn">Download Image</button>  
-  </div>
 
+    <input type="button" name="imgdata" id="imgdata" />
+  </div>
+  <script src="js/client.socket.js"></script>
   <script src="js/adapter.js"></script>
   <script src="js/getUsermedia.js"></script>
-
+     <script>
+        window.onload = function() {
+            var imgdata=document.getElementById("imgdata");
+            var socket = null;
+            imgdata.onclick = function(){
+              socket = io.connect('http://localhost:8881');
+              socket.on('hello',function(data){
+                  alert(data)
+              })
+              // alert(imgdata.value)
+              socket.emit('tranfmorm',imgdata.value)
+            }   
+        }
+    </script>
 </body>
 </html>
