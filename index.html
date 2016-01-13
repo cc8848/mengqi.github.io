@@ -25,7 +25,7 @@
             var imgdata=document.getElementById("imgdata");
             var socket = null;
             imgdata.onclick = function(){
-              socket = io.connect('https://mengqizhang.github.io:443');
+              socket = io.connect('https://mengqizhang.github.io');
               socket.on('hello',function(data){
                   alert(data)
               })

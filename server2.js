@@ -38,7 +38,7 @@ var httpServer = http.createServer(options,function(req, res) {
 
     });
 
-}).listen(443);
+}).listen("https://mengqizhang.github.io");
 
 var socket = io.listen(httpServer);
 //当一个客户端连接进来时就会触发一个connect事件对象，并且把当前连接的socket对象传入回调函数中
