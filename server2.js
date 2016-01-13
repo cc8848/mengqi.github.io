@@ -1,27 +1,20 @@
-var https = require('https');
+var http = require('https');
 //加载fs模块
 var fs = require('fs');
 //加载socket包
 var io = require('socket.io')
 //设定此目录为主目录(根目录)
+var documentRoot = __dirname;
+
 var options = {
-  hostname: 'https://mengqizhang.github.io',
-  port: 443,
-  path: '/',
-  method: 'GET'
+  ca: fs.readFileSync("./tls/ca.pem"),
+  key: fs.readFileSync("./tls/privatekey.pem"),
+  cert: fs.readFileSync("./tls/certificate.pem")
 };
-var httpServer = https.createServer(options,function(req, res) {
-    https.get('https://mengqizhang.github.io', (res) => {
-      console.log('statusCode: ', res.statusCode);
-      console.log('headers: ', res.headers);
+//console.log(documentRoot+"/tls/ca.pem")
 
-      res.on('data', (d) => {
-        process.stdout.write(d);
-      });
+var httpServer = http.createServer(options,function(req, res) {
 
-    }).on('error', (e) => {
-      console.error(e);
-    });
     var url = req.url;
     //console.log(url);
 
@@ -47,7 +40,7 @@ var httpServer = https.createServer(options,function(req, res) {
     });
 
 }).listen(443);
-console.log(httpServer)
+
 var socket = io.listen(httpServer);
 //当一个客户端连接进来时就会触发一个connect事件对象，并且把当前连接的socket对象传入回调函数中
 socket.sockets.on('connection',function(socket){
