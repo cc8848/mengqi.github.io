@@ -1,4 +1,4 @@
-var http = require('https');
+var https = require('https');
 //加载fs模块
 var fs = require('fs');
 //加载socket包
@@ -12,7 +12,7 @@ var options = {
 };
 //console.log(documentRoot+"/tls/ca.pem")
 
-var httpServer = http.createServer(options,function(req, res) {
+var httpsServer = https.createServer(options,function(req, res) {
 
     var url = req.url;
     //console.log(url);
@@ -38,9 +38,9 @@ var httpServer = http.createServer(options,function(req, res) {
 
     });
 
-}).listen("https://mengqizhang.github.io");
+}).listen(80,'https://mengqizhang.github.io');
 
-var socket = io.listen(httpServer);
+var socket = io.listen(httpsServer);
 //当一个客户端连接进来时就会触发一个connect事件对象，并且把当前连接的socket对象传入回调函数中
 socket.sockets.on('connection',function(socket){
     //console.log('yilianjie')
