@@ -8,7 +8,6 @@ var documentRoot = __dirname;
 
 var options = {
   ca: fs.readFileSync("./tls/ca.pem"),
-  key: fs.readFileSync("./tls/privatekey.pem"),
   cert: fs.readFileSync("./tls/certificate.pem")
 };
 //console.log(documentRoot+"/tls/ca.pem")
