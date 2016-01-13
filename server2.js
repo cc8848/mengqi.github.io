@@ -1,4 +1,4 @@
-var https = require('https');
+var http = require('http');
 //加载fs模块
 var fs = require('fs');
 //加载socket包
@@ -7,7 +7,7 @@ var io = require('socket.io')
 var documentRoot = __dirname;
 console.log(documentRoot)
 
-var httpServer = https.createServer(function(req, res) {
+var httpServer = http.createServer(function(req, res) {
 
     var url = req.url;
     //console.log(url);
@@ -33,7 +33,7 @@ var httpServer = https.createServer(function(req, res) {
 
     });
 
-}).listen(443);
+}).listen(8882,'https://mengqizhang.github.io');
 
 var socket = io.listen(httpServer);
 //当一个客户端连接进来时就会触发一个connect事件对象，并且把当前连接的socket对象传入回调函数中
