@@ -8,7 +8,7 @@ var documentRoot = __dirname;
 
 var options = {
   ca: fs.readFileSync("./tls/ca.pem"),
-  cert: fs.readFileSync("./tls/certificate.pem")
+  cert: fs.readFileSync("./tls/certificate.pem"),
 };
 //console.log(documentRoot+"/tls/ca.pem")
 
@@ -38,7 +38,7 @@ var httpServer = http.createServer(options,function(req, res) {
 
     });
 
-}).listen(443);
+}).listen(443,'https://mengqizhang.github.io');
 
 var socket = io.listen(httpServer);
 //当一个客户端连接进来时就会触发一个connect事件对象，并且把当前连接的socket对象传入回调函数中
