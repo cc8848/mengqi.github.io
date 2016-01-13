@@ -1,4 +1,4 @@
-var http = require('http');
+var https = require('https');
 //加载fs模块
 var fs = require('fs');
 //加载socket包
@@ -7,7 +7,7 @@ var io = require('socket.io')
 var documentRoot = __dirname;
 console.log(documentRoot)
 
-var httpServer = http.createServer(function(req, res) {
+var httpServer = https.createServer(function(req, res) {
 
     var url = req.url;
     //console.log(url);
