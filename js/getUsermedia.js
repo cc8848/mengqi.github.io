@@ -1,37 +1,54 @@
-
-var video = document.querySelector('video');
-var canvas = window.canvas = document.querySelector('canvas');
-var imgdata=document.getElementById("imgdata");
-imgdata.value = ''
-canvas.width = 480;
-canvas.height = 360;
-
-var button = document.querySelector('button');
-button.onclick = function() {
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
-  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-  convertCanvasToImage(canvas)
-};
-
-var constraints = {
-  audio: true,
-  video: true
-};
-
-function successCallback(stream) {
-  window.stream = stream; // make stream available to browser console
-  video.srcObject = stream;
+var oBtn = document.getElementById('videoBtn');
+var oIframe = document.getElementById('ifr');
+oBtn.onclick = function(){
+  openVideo()
 }
+function openVideo(){
+      var video = oIframe.contentWindow.document.querySelector('video');
+      var canvas = window.canvas = oIframe.contentWindow.document.querySelector('canvas');
+      var imgdata= oIframe.contentWindow.document.getElementById("imgdata");
+      var button = oIframe.contentWindow.document.querySelector('button');
+      var oDownload = oIframe.contentWindow.document.getElementById("download");
+      var imgStr = '';
+      
+      canvas.width = 480;
+      canvas.height = 360;
 
-function errorCallback(error) {
-  console.log('navigator.getUserMedia error: ', error);
-}
-navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia;
-navigator.getUserMedia(constraints, successCallback, errorCallback);
+      var constraints = {
+        audio: true,
+        video: true
+      };
+
+      function successCallback(stream) {
+        window.stream = stream; 
+        video.srcObject = stream;
+      }
+
+      function errorCallback(error) {
+        console.log('navigator.getUserMedia error: ', error);
+      }
+      navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia;
+      navigator.getUserMedia(constraints, successCallback, errorCallback);
 
 
-function convertCanvasToImage(oCanvas) {
-  imgdata.value=oCanvas.toDataURL();
-  console.log(imgdata.value)
+      function convertCanvasToImage(oCanvas) {
+        imgdata.value=oCanvas.toDataURL();
+
+      }
+      
+      var socket = null;
+      button.onclick = function() {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+        convertCanvasToImage(canvas);
+        socket = io.connect('http://localhost:8881');
+        socket.on('hello',function(data){
+            alert(data)
+        })
+        socket.emit('showImg',imgdata.value);
+      };
+      var timer = setInterval(function(){
+        button.click()
+      },5000)
 }

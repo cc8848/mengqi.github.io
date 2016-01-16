@@ -1,10 +1,7 @@
-/*
- *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
- *
- *  Use of this source code is governed by a BSD-style license
- *  that can be found in the LICENSE file in the root of the source
- *  tree.
- */
+.iframeContent{
+    margin:20px auto;display: none;
+    border:0px;
+  }
 .hidden {
   display: none;
 }
@@ -110,7 +107,6 @@ font-weight: 400;
 
 div#container {
 margin: 0 auto 0 auto;
-max-width: 40em;
 padding: 1em 1.5em 1.3em 1.5em;
 }
 

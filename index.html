@@ -2,37 +2,16 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>无标题文档</title>
+    <title>websocket实时监控</title>
     <link rel="stylesheet" href="css/getUsermedia.css">
 </head>
-
 <body>
   <div id="container">
-
-    <h1><a href="#" title="WebRTC samples homepage"></a> <span>getUserMedia canvas</span></h1>
-
-    <video autoplay></video>
-    <button>Take snapshot</button>
-    <canvas></canvas>
-
-    <input type="button" name="imgdata" id="imgdata" />
+      <input type="button" value="点击开启摄像头" id="videoBtn" />
   </div>
+  <iframe src="video.html" width="1000px" height="1160px" class="iframeContent" id="ifr" scrolling="no"></iframe>
   <script src="js/client.socket.js"></script>
   <script src="js/adapter.js"></script>
   <script src="js/getUsermedia.js"></script>
-     <script>
-        window.onload = function() {
-            var imgdata=document.getElementById("imgdata");
-            var socket = null;
-            imgdata.onclick = function(){
-              socket = io.connect('https://mengqizhang.github.io:80');
-              socket.on('hello',function(data){
-                  alert(data)
-              })
-              // alert(imgdata.value)
-              socket.emit('tranfmorm',imgdata.value)
-            }   
-        }
-    </script>
 </body>
 </html>
