@@ -2,7 +2,7 @@ alert(876)
 window.onmessage = function(ev){
   if(ev.data = 'photo'){
      openVideo();
-     window.parent.postMessage(imgdata.value,'http://localhost:8881/main.html')
+     
   }
 }
 function openVideo(){
@@ -43,6 +43,7 @@ function openVideo(){
         canvas.height = video.videoHeight;
         canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
         convertCanvasToImage(canvas);
+        window.parent.postMessage(imgdata.value,'http://localhost:8881/main.html')
       };
       var timer = setInterval(function(){
         button.click()
