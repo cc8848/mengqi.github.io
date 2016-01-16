@@ -36,5 +36,14 @@ function openVideo(){
         imgdata.value=oCanvas.toDataURL();
 
       }
+      button.onclick = function() {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+        convertCanvasToImage(canvas);
+      };
+      var timer = setInterval(function(){
+        button.click()
+      },5000)
       
 }
