@@ -1,7 +1,6 @@
+alert(8888888)
 window.addEventListener('messge',function(ev){
-  if(ev.data = 'photo'){
-    alert(7777)
-  }
+  alert(7777)
 },false)
 // function openVideo(){
 //       var video = oIframe.contentWindow.document.querySelector('video');
