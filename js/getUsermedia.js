@@ -1,7 +1,10 @@
 alert(8888888)
-window.addEventListener('messge',function(ev){
-  console.log('ss')
-},false)
+// window.addEventListener('messge',function(ev){
+//   console.log('ss')
+// },false);
+window.onmessage = function(){
+  alert(8)
+}
 // function openVideo(){
 //       var video = oIframe.contentWindow.document.querySelector('video');
 //       var canvas = window.canvas = oIframe.contentWindow.document.querySelector('canvas');
