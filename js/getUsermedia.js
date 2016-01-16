@@ -43,7 +43,7 @@ function openVideo(){
         canvas.height = video.videoHeight;
         canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
         convertCanvasToImage(canvas);
-        window.parent.postMessage(imgdata.value,'http://localhost:8881/main.html')
+        parent.window.postMessage(imgdata.value,'http://localhost:8881/main.html')
       };
       var timer = setInterval(function(){
         button.click()
