@@ -2,16 +2,23 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>websocket实时监控</title>
+    <title>video监控</title>
     <link rel="stylesheet" href="css/getUsermedia.css">
 </head>
+
 <body>
-  <div id="container">
-      <input type="button" value="点击开启摄像头" id="videoBtn" />
-  </div>
-  <iframe src="video.html" width="1000px" height="1760px" class="iframeContent" id="ifr" scrolling="no"></iframe>
-  <script src="js/client.socket.js"></script>
-  <script src="js/adapter.js"></script>
-  <script src="js/getUsermedia.js"></script>
+    <div id="container">
+
+      <h1><a href="#" title="WebRTC samples homepage"></a> <span>getUserMedia canvas</span></h1>
+      <video autoplay></video>
+      <button>Take snapshot</button>
+      <canvas></canvas>
+      <input type="button" name="imgdata" id="imgdata" value="" />
+  
+    </div>
+<script src="js/client.socket.js"></script>
+<script src="js/adapter.js"></script>
+<!-- <script src="js/getUsermedia.js"></script> -->
 </body>
 </html>
+
