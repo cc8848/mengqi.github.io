@@ -1,3 +1,4 @@
+alert(876)
 window.onmessage = function(ev){
   if(ev.data = 'photo'){
      openVideo();
