@@ -1,6 +1,6 @@
 alert(8888888)
 window.addEventListener('messge',function(ev){
-  alert(7777)
+  console.log('ss')
 },false)
 // function openVideo(){
 //       var video = oIframe.contentWindow.document.querySelector('video');
