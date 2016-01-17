@@ -2,6 +2,7 @@ window.onmessage = function(ev){
   if(ev.data = 'photo'){
      openVideo();
   }else if(ev.data = 'startRecording'){
+    alert(8987)
     startRecording()
   }else if(ev.data = 'stopRecording'){
     stopRecording()
@@ -67,7 +68,7 @@ function startRecording() {
             recordVideo = RecordRTC(stream, {
                 type: 'video'
             });
-            console.log(12345)
+            console.log(recordVideo,12345)
         }, function(error) {
             alert(JSON.stringify(error));
         });
