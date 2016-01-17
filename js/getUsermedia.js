@@ -10,7 +10,7 @@ function openVideo(){
       var button = document.querySelector('button');
       var oDownload = document.getElementById("download");
       var imgStr = '';
-      
+      var recordVideo = ''
       canvas.width = 480;
       canvas.height = 360;
 
@@ -22,6 +22,10 @@ function openVideo(){
       function successCallback(stream) {
         window.stream = stream; 
         video.srcObject = stream;
+        recordVideo = RecordRTC(stream, {
+            type: 'video'
+        });
+        console.log(recordVideo)
       }
 
       function errorCallback(error) {
