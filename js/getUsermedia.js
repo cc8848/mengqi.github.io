@@ -3,9 +3,9 @@ window.onmessage = function(ev){
      openVideo();
   }else if(ev.data = 'startRecording'){
     alert(8987)
-    startRecording()
+    // startRecording()
   }else if(ev.data = 'stopRecording'){
-    stopRecording()
+    // stopRecording()
   }
 }
 function openVideo(){
