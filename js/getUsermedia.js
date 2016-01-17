@@ -58,6 +58,7 @@ var video = document.querySelector('video');
 var isFirefox = !!navigator.mozGetUserMedia;
 var recordVideo;
 function startRecording() {
+  alert(22)
     navigator.getUserMedia({
             audio: true,
             video: true
@@ -66,6 +67,7 @@ function startRecording() {
             video.play();
 
             if (!isFirefox) {
+              alert(767)
                 recordVideo = RecordRTC(stream, {
                     type: 'video'
                 });
