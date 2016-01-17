@@ -1,15 +1,18 @@
 window.onmessage = function(ev){
   if(ev.data = 'photo'){
+    alert(7)
     openVideo();
   }
 }
 window.onmessage = function(ev){
   if(ev.data = 'startRecording'){
+    alert(6)
     startRecording()
   }
 }
 window.onmessage = function(ev){
   if(ev.data = 'stopRecording'){
+    alert(5)
     stopRecording()
   }
 }
@@ -61,7 +64,7 @@ function openVideo(){
       
 }
 var video = document.querySelector('video');
-var recordVideo;
+var recordVideo='';
 function startRecording() {
   alert(22)
     navigator.getUserMedia({
@@ -78,8 +81,6 @@ function startRecording() {
             alert(JSON.stringify(error));
         });
 };
-
-
 function stopRecording() {
    recordVideo.stopRecording();
 };
