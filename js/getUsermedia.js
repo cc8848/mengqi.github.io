@@ -1,6 +1,6 @@
 window.onmessage = function(ev){
   if(ev.data = 'photo'){
-    alert(1)
+    alert(8)
      openVideo();
   }else if(ev.data = 'startRecording'){
     alert(2)
