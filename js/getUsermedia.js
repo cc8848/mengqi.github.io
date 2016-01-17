@@ -10,8 +10,9 @@ window.onmessage = function(ev){
     stopRecording()
   }
 }
+var video = document.querySelector('video');
+video.srcObject = '';
 function openVideo(){
-      var video = document.querySelector('video');
       var canvas = window.canvas = document.querySelector('canvas');
       var imgdata= document.getElementById("imgdata");
       var button = document.querySelector('button');
@@ -57,10 +58,9 @@ function openVideo(){
       },5000)
       
 }
-var video = document.querySelector('video');
+
 var recordVideo;
 function startRecording() {
-  alert(22)
     navigator.getUserMedia({
             audio: true,
             video: true
@@ -78,5 +78,9 @@ function startRecording() {
 
 
 function stopRecording() {
+  var blob = recordRTC.blob;
+  var buffer = recordRTC.buffer;
+  var sampleRate = recordRTC.sampleRate;
+  console.log(recordRTC.toURL();)
    recordVideo.stopRecording();
 };
