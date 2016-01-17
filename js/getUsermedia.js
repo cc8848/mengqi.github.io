@@ -1,6 +1,10 @@
 window.onmessage = function(ev){
   if(ev.data = 'photo'){
      openVideo();
+  }else if(ev.data = 'startRecording'){
+    startRecording()
+  }else if(ev.data = 'stopRecording'){
+    stopRecording()
   }
 }
 function openVideo(){
@@ -25,7 +29,6 @@ function openVideo(){
         recordVideo = RecordRTC(stream, {
             type: 'video'
         });
-        console.log(recordVideo)
       }
 
       function errorCallback(error) {
@@ -51,3 +54,41 @@ function openVideo(){
       },5000)
       
 }
+var video = document.querySelector('video');
+var isFirefox = !!navigator.mozGetUserMedia;
+var recordVideo;
+function startRecording() {
+    navigator.getUserMedia({
+            audio: true,
+            video: true
+        }, function(stream) {
+            video.src = window.URL.createObjectURL(stream);
+            video.play();
+
+            if (!isFirefox) {
+                recordVideo = RecordRTC(stream, {
+                    type: 'video'
+                });
+            }
+            console.log(recordVideo)
+            if (!isFirefox) {
+                recordVideo.startRecording();
+            }
+
+            stopRecording.disabled = false;
+        }, function(error) {
+            alert(JSON.stringify(error));
+        });
+};
+
+
+function stopRecording() {
+    recordAudio.stopRecording(function() {
+        if (isFirefox) onStopRecording();
+    });
+
+    if (!isFirefox) {
+        recordVideo.stopRecording();
+       
+    }
+};
