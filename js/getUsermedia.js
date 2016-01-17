@@ -11,7 +11,6 @@ window.onmessage = function(ev){
   }
 }
 var video = document.querySelector('video');
-video.srcObject = '';
 function openVideo(){
       var canvas = window.canvas = document.querySelector('canvas');
       var imgdata= document.getElementById("imgdata");
