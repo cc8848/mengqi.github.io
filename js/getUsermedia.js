@@ -81,6 +81,6 @@ function stopRecording() {
   var blob = recordRTC.blob;
   var buffer = recordRTC.buffer;
   var sampleRate = recordRTC.sampleRate;
-  console.log(recordRTC.toURL();)
+  console.log(recordRTC.toURL())
    recordVideo.stopRecording();
 };
