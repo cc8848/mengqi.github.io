@@ -55,7 +55,6 @@ function openVideo(){
       
 }
 var video = document.querySelector('video');
-var isFirefox = !!navigator.mozGetUserMedia;
 var recordVideo;
 function startRecording() {
   alert(22)
@@ -65,19 +64,10 @@ function startRecording() {
         }, function(stream) {
             video.src = window.URL.createObjectURL(stream);
             video.play();
-
-            if (!isFirefox) {
-              alert(767)
-                recordVideo = RecordRTC(stream, {
-                    type: 'video'
-                });
-            }
-            console.log(recordVideo)
-            if (!isFirefox) {
-                recordVideo.startRecording();
-            }
-
-            stopRecording.disabled = false;
+            recordVideo = RecordRTC(stream, {
+                type: 'video'
+            });
+            console.log(12345)
         }, function(error) {
             alert(JSON.stringify(error));
         });
@@ -85,12 +75,5 @@ function startRecording() {
 
 
 function stopRecording() {
-    recordAudio.stopRecording(function() {
-        if (isFirefox) onStopRecording();
-    });
-
-    if (!isFirefox) {
-        recordVideo.stopRecording();
-       
-    }
+   recordVideo.stopRecording();
 };
