@@ -112,7 +112,6 @@ define(function(require,exports){
 				this.removeEventListener('transitionend',end,false)
 				this.style.transform = 'rotate('+this.iDeg+'deg) scale(1.2)';
 				this.style.zIndex = iZindex;
-				//为什么要清除transition，是因为上个transition为1s，而下面的是50ms就过来了，此时z-index还没有完全过渡上去，效果不好
 				this.style.transition = 'none';
 				that = this;
 				setTimeout(function(){

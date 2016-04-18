@@ -22,11 +22,6 @@ define(function(require,exports){
 			asideTop()
 		}
 		oh2.onmouseover = showNav
-		// for(var j=0;j<navSpan.length;j++){
-		// 	navSpan[j].onmouseover = function(){
-
-		// 	}
-		// }
 		function showNav(){
 			clearInterval(oTimer);
 			if(!Boff){

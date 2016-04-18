@@ -2,17 +2,11 @@
 ul li{list-style:none;}
 p,span,a{font-family: "微软雅黑",Arial;}
 .header{height: 75px;border-bottom: 2px solid #FD5A71;}
-/*.logo{width: 290px;height: 290px;border-radius: 50%;cursor: pointer;position: absolute;top: -100px;left: -20px;background: rgba(255,255,255,0.6);box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.1);transition:all 0.4s}*/
 .logo{height: 48px;width: 170px;background:url(../image/logo.png);position: relative;top: 19px;}
-/*.logo:hover{transform:rotate(360deg)}*/
 .nav{width: 146px;height: 54px;position: fixed;top: 0px;right: 50px;}
-/*footer*/
-.footer,.header{background-color: rgba(0, 0, 0, 0.4);min-width: 1000px;position: relative;margin: 0px auto;z-index: 10;
+.header{background-color: rgba(0, 0, 0, 0.4);min-width: 1000px;position: relative;margin: 0px auto;z-index: 10;
 position: relative;}
 .header>div{width: 1000px;height: 100%;margin: 0px auto;}
-#mainwrap>.footer {position: absolute;width:100%;bottom: 0px;height: 95px;border-top: 2px solid #FD5A71;}
-.footer-content{width: 1000px;margin: 0px auto;height: 95px;padding: 10px 100px;}
-.footer-content>.logo{opacity: 0.6;left:15px;}
 /*折纸导航*/
 @keyframes open{
 	0%
@@ -137,12 +131,6 @@ position: relative;}
 		-webkit-transform:rotateX(-120deg);
 	}
 }
-/*三D盒子*/
-/*.main-content{width:100%;perspective: 800px;-webkit-perspective: 800px;-moz-perspective: 800px;}
-.main-content .preserve-content{transform:preserve-3d;-moz-transform-style:preserve-3d;-webkit-transform-style:preserve-3d;
-transform-origin:center center 50%;-moz-transform-origin:center center 600px;-webkit-transform-origin:center center 50%;width: 100%;
-height: 100%;position: relative;}
-.main-content .preserve-content>li{width:100%;height:100%;position: absolute;}*/
 .nav,.fold{-webkit-perspective:800px;-moz-perspective:800px;}
 .fold h2{padding-top: 18px;line-height: 36px;text-indent: 50px;background:url("../image/topMenu.png") no-repeat scroll 0% 0%;position: relative;z-index: 2;transform: translateZ(1px);-moz-transform: translateZ(1px);-webkit-transform: translateZ(1px);}
 .nav .T3D{transform: rotateY(-15deg);-moz-transform: rotateY(-15deg);-webkit-transform: rotateY(-15deg);}

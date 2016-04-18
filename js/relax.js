@@ -79,19 +79,26 @@ define(function(require,exports){
 		//可视化音乐
 		music()
 		function music(){
-			var audioContext ,analyser,sourceNode,key,f,h;
+			var audioContext ,analyser,sourceNode,key,f,h,scaleX;
 			window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
 			var musicList = ['mp3/Sugar.mp3','mp3/Sugar.mp3','image/Sugar.mp3','mp3/The Dawn.mp3'];
 			var color = ['#8CF6F3','#FFD96D','#92AEF0','#5FB65F']
+			function audioint(){
+				audio.pause();
+				audio = null;
+				audio = new Audio();
+			}
 			for(var i=0;i<aDiv.length-1;i++){
 				aDiv[i].index=i;
 				aDiv[i].onclick = function(){
+					window.dancenum = this.index;
 					for(var i=0;i<aDiv.length;i++){
 						aDiv[i].style.background = '#fff';
-						aDiv[i].children[0].style.background = '#fff';
+						aDiv[i].children[0].style.cssText = 'transform:scale(1,1);-webkit-transform:scale(1,1);background:#fff';
 					}
 					this.style.background = color[this.index];
 					this.children[0].style.background = color[this.index];
+					audioint();
 					audio.src = musicList[this.index];
 					analysers();
 					for( var i = 0; i < 7; i++ ){
@@ -100,8 +107,8 @@ define(function(require,exports){
 				}
 			}
 			aDiv[aDiv.length-1].onclick = function(){
-				cancelAnimationFrame(timer)
-				audio.pause();			
+				cancelAnimationFrame(timer);
+				audioint();
 			}
 			function analysers(){
 		        audioContext = new AudioContext();
@@ -109,23 +116,8 @@ define(function(require,exports){
 		        sourceNode = audioContext.createMediaElementSource(audio);
 		        sourceNode.connect(analyser);
 		        sourceNode.connect(audioContext.destination);
-		       
 		        audio.play();
 		        update()
-
-
-
-		        // audio.play();
-		        // audioContext = new AudioContext();
-		        // analyser = audioContext.createAnalyser();
-		        // // sourceNode = audioContext.createMediaElementSource(audio);
-		        // sourceNode = audioContext.createBufferSource();
-		        // sourceNode.connect(audioContext.destination);
-		        // sourceNode.connect(analyser);
-		        // analyser.connect(audioContext.destination)
-		        // sourceNode.buffer = arraybuffer;
-		        
-		        // update()
 
 		    }
 		    function update(){
@@ -149,7 +141,12 @@ define(function(require,exports){
 		    		key = num / aImg[i].offsetHeight *100;
 		    		m = 100-key;
 					n = (m-30)>0?(m-30):0;
+					scaleX = (n/50)>0.7&&(n/50)<1.5?(n/50):1;
 					aImg[i].style.cssText = "-webkit-transform:(0," + n + "%,0);transform:translate3d(0," + n +"%,0);-moz-transform:(0," + n + "%,0);transform:translate3d(0," + n +"%,0)";
+		    		if(i==0){
+		    			aDiv[dancenum].children[0].style.transform='scale('+scaleX+','+scaleX+')';
+		    			aDiv[dancenum].children[0].style.webkitTransform ='scale('+scaleX+','+scaleX+')';
+		    		}
 		    	}
 		    }
 		}
