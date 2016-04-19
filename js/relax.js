@@ -14,7 +14,7 @@ define(function(require,exports){
 		var clientX = 0;
 		var onOff = true;
 		var audio = new Audio();
-		document.body.style.background="#7ca097;"
+		document.body.style.background="#363778"
 		for(var i=0;i<ali.length;i++){
 			ali[i].style.width = (view().w / (ali.length) /view().w)*100+'%'
 		}
@@ -81,7 +81,7 @@ define(function(require,exports){
 		function music(){
 			var audioContext ,analyser,sourceNode,key,f,h,scaleX;
 			window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
-			var musicList = ['mp3/Sugar.mp3','mp3/Sugar.mp3','image/Sugar.mp3','mp3/The Dawn.mp3'];
+			var musicList = ['mp3/See You Again-Wiz Khalifa，Charlie Puth.mp3','mp3/Sugar.mp3','mp3/BANG BANG BANG (Inst.).mp3','mp3/The Dawn.mp3'];
 			var color = ['#8CF6F3','#FFD96D','#92AEF0','#5FB65F']
 			function audioint(){
 				audio.pause();

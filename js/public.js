@@ -17,7 +17,6 @@ define(function(require,exports){
 		function asideTop(){
 			aside.style.top = (document.documentElement.clientHeight - aside.offsetHeight)/2+'px';
 		}
-		
 		window.onresize=function(){
 			asideTop()
 		}

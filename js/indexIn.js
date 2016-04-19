@@ -1,5 +1,4 @@
 define(function(require,exports){
-	
 	function init(){
 		var oPlanet = document.getElementById('planet');
 		var oEm = oPlanet.getElementsByTagName('em');

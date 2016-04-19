@@ -1,5 +1,4 @@
 define(function(require,exports){
-	
 	function show(asection){
 		var hash = window.location.hash.substring(1) || 'index';
 		for(var i=0;i<asection.length;i++){
@@ -25,9 +24,7 @@ define(function(require,exports){
 				}
 			}
 		}
-		
 	}
-	
 	exports.show = show;
 	
 });

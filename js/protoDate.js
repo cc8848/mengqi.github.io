@@ -1,11 +1,9 @@
 define(function(require,exports){
 	var protoDate=[
 	{
-		name : '河北大学',
-		content:'河北大学官网用来展现河北大学各个学部的实时动态，模块化的网站，一种简约清晰又不失大方的风格。河大官网新版的使用受到了学院领导和学生的一致好评，并且更有利于学生查询信息等等。其中用到的技术多为html，css，js，此网站是使用jeecms进行的标签嵌套。',
-		themeImage: ['image/hbu-little.png','image/hbu-little2.png'],
-		time:'2014-9',
-		contentImage:['../image/1.jpeg','../image/2.jpeg','../image/3.jpeg','../image/4.jpeg']
+		name : '',
+		content:'',
+		themeImage: ['image/6.jpg','image/6.jpg'],
 	},
 	{
 		name : '河北大学官网',

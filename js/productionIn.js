@@ -7,10 +7,11 @@ define(function(require,exports){
 		var prodList = prodUl.children;	
 		var prodHtml = '';
 		var aTags=''
-		document.body.style.background='#E8D0CA';		
+		document.body.style.background='#473678';		
 		for(var i=0;i<date.length;i++){
 			aTags= date[i].name?'<P>'+date[i].name+'<br/></P><a class="productico"></a>':'<a></a>'
 			prodHtml += '<li><a href=""></a><div class="prod-content"><b class="prod-border"></b><i class="prod-photo prod-picture" style="background: url('+date[i].themeImage[0]+');background-size: cover;background-position: center center;"></i><span class="prod-side prod-con" style="background: url('+date[i].themeImage[1]+');background-position: center center;background-size: cover;">'+aTags+'</span></div></li>';
+			
 		}
 		prodUl.innerHTML = prodHtml;
 		slowshow()

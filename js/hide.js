@@ -1,8 +1,4 @@
-// JavaScript Document
-
-
 define(function(require,exports){
-	
 	function hide(aBtn,asection,navSpan){
 		var nownum = window.sessionStorage.getItem('navNum') || 0;
 		aBtn[1].onclick = function(e){
@@ -10,7 +6,6 @@ define(function(require,exports){
 			nownum = nownum>=asection.length?0:nownum;
 			hashTab();
 			return false;
-			
 		}
 		aBtn[0].onclick = function(e){
 			nownum--;
@@ -24,7 +19,5 @@ define(function(require,exports){
 			require('indexOut.js').init(asection,hash);
 		}
 	}
-	
 	exports.hide = hide;
-	
 });

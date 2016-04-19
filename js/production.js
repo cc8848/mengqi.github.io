@@ -9,10 +9,12 @@ define(function(require,exports){
 			var iTop = (productico.parentNode.parentNode.offsetHeight-productico.offsetHeight)/2;
 			productico.style.cssText='left:'+iLeft+'px;top:'+iTop+'px';
 			prodList[i].index = i;
-			if(i==3||i==6){
-				prodList[i].onclick = function(){
-					return false;
-				}
+			if(!date[i].name){
+				(function(i){
+					prodList[i].onclick = function(){
+						return false;
+					}
+				})(i)
 			}else{
 				prodList[i].onclick = function(){
 					var num = 0;

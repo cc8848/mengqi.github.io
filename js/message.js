@@ -14,7 +14,7 @@ define(function(require,exports){
 		var msgError = document.getElementById('msg-error');
 		//生成页数。
 		var page = Math.ceil(date.length/msgPage);
-		document.body.style.background='#7CA097';
+		document.body.style.background='#363778';
 		str='<a href="javascript:;">首页</a><a href="javascript:;" >上一页</a><p>'
 		for(var i=1;i<=page;i++){
 			str += '<a href="javascript:;">'+i+'</a>'

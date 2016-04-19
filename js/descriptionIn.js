@@ -1,5 +1,4 @@
 define(function(require,exports){
-	
 	function init(){
 		var proStr = '';
 		var prodate = require('prodata.js').prodate;
@@ -22,7 +21,6 @@ define(function(require,exports){
 			
 			require('prodescrition.js').proDescrition(aDd,oStage,proStr,_deg)
 		},50)
-		
 	}
 	exports.init = init;
 });
