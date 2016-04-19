@@ -1,5 +1,5 @@
 define(function(require,exports){
-	function hide(aBtn,asection,navSpan){
+	function hide(aBtn,asection){
 		var nownum = window.sessionStorage.getItem('navNum') || 0;
 		aBtn[1].onclick = function(e){
 			nownum++;

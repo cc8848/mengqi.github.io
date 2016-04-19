@@ -30,10 +30,11 @@ define(function(require,exports){
 						photosOnload(date[that.index].contentImage);
 						var timer = setInterval(function(){
 							num += 28;
-							photoeDscription.style.height = num + 'px';
-							if(num>=410){
+							if(num>=400){
+								num = 400;
 								clearInterval(timer);
 							}
+							photoeDscription.style.height = num + 'px';
 						},50)
 					}
 					photoeDscription.innerHTML = '<span class="photo-description-back">X</span><h2>'+date[this.index].name+'</h2><time>Date:'+date[this.index].time+'</time><p>'+date[this.index].content+'</p>';

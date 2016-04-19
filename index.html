@@ -10,7 +10,10 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 < ![endif]-->
 <script>
+window.onload = function(){
+
     seajs.use('main.js')
+}
 </script>
 </head>
 
@@ -20,26 +23,6 @@
         <div>
             <h1 class="logo"></h1>
             <!--折纸导航-->
-            <div id="nav" class="nav">
-                <div id="fold" class="fold">
-                    <h2>导航&amp;菜单</h2>
-                     <div style="top: 54px;" id="child-nav">
-                        <span data-hash="index">首页</span>
-                        <div>
-                            <span data-hash="production">作品展示</span>
-                            <div>
-                                <span data-hash="description">自我描述</span>
-                                <div>
-                                     <span data-hash="message">留言给我</span>
-                                    <div>
-                                        <span data-hash="relax">舞动音乐</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </header>
     <aside class="aside-row">

@@ -4,7 +4,6 @@ define(function(require,exports){
 		var ofold=document.getElementById("fold");
 		var oh2=ofold.getElementsByTagName("h2")[0];
 		var aDiv=ofold.getElementsByTagName("div");
-		var aside = document.getElementsByTagName('aside')[0]
 		var childNav=document.getElementById("child-nav");
 		var navSpan=childNav.getElementsByTagName("span");
 		var i=0;
@@ -13,13 +12,7 @@ define(function(require,exports){
 		var Boff=true;
 		var Tab=true;
 		var iTime=1000;
-		asideTop()
-		function asideTop(){
-			aside.style.top = (document.documentElement.clientHeight - aside.offsetHeight)/2+'px';
-		}
-		window.onresize=function(){
-			asideTop()
-		}
+		
 		oh2.onmouseover = showNav
 		function showNav(){
 			clearInterval(oTimer);
