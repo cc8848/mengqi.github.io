@@ -445,13 +445,13 @@ display: none;transform: scale(2);-moz-transform: scale(2);-webkit-transform: sc
 .moon>img{opacity: 0.3}
 /*message留言板部分*/
 .msg-container{width:1011px;margin: 50px auto;    overflow: hidden;}
-.msg-list{width:600px;float: left; position: relative;}
+.msg-list{width:600px;float: left; position: relative;z-index: 10;}
 .msg-content{width:364px;border:1px solid #fff;float: left;margin-left: 25px;background: rgb(77, 78, 143);border-radius: 3px;
 box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);transition:all .6s;position: relative;}
-.msg-content:hover,.text:hover{box-shadow: 0px 6px 15px rgba(0,0,0,0.3);}
+.msg-content:hover,.text:hover{box-shadow: 0px 6px 15px rgba(0,0,0,0.5);}
 .msg-header>p{background: #fff;text-indent: 1.5em;color:#585858;font-size: 15px;box-shadow: 0px 6px 12px -6px rgba(0,0,0,0.3);}
 .msg-content>p{height:42px;line-height: 42px;}
-.msg-content ul{margin: 20px 0px;}
+.msg-content ul{margin: 20px 0px;position: relative;z-index: 10;}
 .msg-content ul li{margin: 10px 20px;}
 .msg-container ul li span{font-size: 12px;color:#f9f3f0}
 .msg-container ul li input,.msg-container ul li textarea{margin-left: 10px;width: 266px;border-radius: 3px;background: transparent none repeat scroll 0% 0%;
@@ -461,7 +461,7 @@ padding: 3px 5px 2px;}
 .msg-container ul li textarea{height: 75px;vertical-align: top;}
 .msg-container ul li button{width: 145px;height: 35px;color: rgb(255, 255, 255);border: 0px none;background: #f47e5b;border: 0px;border-radius: 5px;
 margin-left: 34px;cursor: pointer;outline: none}
-.msg-container ul li button:hover{backgroun:#e47e5b;}
+.msg-container ul li button:hover{background:#e47e5b;}
 .msg-list>p{width: 100%;height:36px;line-height: 36px;border-radius: 3px}
 .row{position: absolute;width: 2px;border-width: 8px;border-style: solid;}
 .rowbottom{border-color: #FFF rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);top: 36px;left: 87px;}
