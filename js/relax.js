@@ -135,7 +135,7 @@ define(function(require,exports){
 				}
 		    }
 		    function dance(arr){
-		    	var step = Math.round(arr.length/8)
+		    	var step = Math.round(arr.length/9)
 		    	for(var i=0;i<aImg.length;i++){
 		    		num = arr[i * step];
 		    		key = num / aImg[i].offsetHeight *100;
