@@ -5,7 +5,7 @@ define(function(require,exports){
 		var now =0;
 		for(var i=0;i<aDd.length;i++){
 			(function(i){
-				aDd[i].onclick = function(){z
+				aDd[i].onclick = function(){
 					var that = this;
 					oStageRotateY = -i*(_deg);
 					oStage.style.transform = 'perspective('+num+'px) rotateX(-10deg) rotateY('+oStageRotateY+'deg)';
