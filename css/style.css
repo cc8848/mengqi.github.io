@@ -584,7 +584,7 @@ transform: translateY(-220px) rotateX(90deg);}
 @-webkit-keyframes typing { from { width: 0; } }
 @keyframes caret { 50% { border-color: transparent; } }
 @-webkit-keyframes caret { 50% { border-color: transparent; } }
-.person-img{width: 90%;margin: 10px auto;display: block;}
+.person-img{width: 90%;margin: 10px auto;display: block;height:117px;}
 .person-dec{padding: 0px 13px 30px;}
 .person-title{width: 0px;border: 0;font-weight: 500;white-space: nowrap;overflow: hidden;color: #0075B1;font-size: 24px;margin-bottom: 10px;}
 .step{width: 168px;border-right: .1em solid;animation: typing 2.5s steps(7, end),caret 0.5s step-end infinite alternate;

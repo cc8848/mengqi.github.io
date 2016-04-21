@@ -3,11 +3,21 @@ define(function(require,exports){
 		var num = 2000;
 		var oStageRotateY = 0;
 		var now =0;
+		var index = 0;
 		for(var i=0;i<aDd.length;i++){
 			(function(i){
 				aDd[i].onclick = function(){
+					var standLeft= aDd[index].getBoundingClientRect().left;
+					var nowLeft= this.getBoundingClientRect().left;
 					var that = this;
-					oStageRotateY = -i*(_deg);
+					index = i;
+					if(standLeft>nowLeft){
+						oStageRotateY = oStageRotateY + (_deg);
+					}else if(standLeft<nowLeft){
+						oStageRotateY = oStageRotateY - (_deg);
+					}else{
+						oStageRotateY = oStageRotateY;
+					}
 					oStage.style.transform = 'perspective('+num+'px) rotateX(-10deg) rotateY('+oStageRotateY+'deg)';
 					oStage.style.transition = "2s";
 					oStage.addEventListener('transitionend',end,false)
@@ -16,7 +26,8 @@ define(function(require,exports){
 						that.getElementsByTagName('h3')[0].className = 'person-title step'
 					}
 				}
-			})(i)
+			})(i);
+			
 		}
 		document.body.onmousewheel = mousefn;
 		if (document.body.addEventListener) {

@@ -74,7 +74,7 @@ define(function(require,exports){
             
         }
 
-        var str = "在网上看到的几个使用动画特效做成的案例，感觉效果很棒，闲来无事就动手在案例设计基础上加上自己的设计想法用原生js做成此小站。小站是使用seajs进行的一站式开发，技术多以html5和css3、javascript为主，其中有的功能还没有完成，会继续不断改进的，另外说一下，由于大量的HTML5和css3所以你懂的，只做了谷歌和火狐的兼容。"
+        var str = "在网上看到的几个使用动画特效做成的案例，感觉效果很棒，闲来无事就动手在案例设计基础上加上自己的设计想法用原生js做成此小站。小站是使用seajs模块加载进行的一站式开发，技术多以html5和css3、javascript为主。但是由于时间原因，其中有的功能还没有完善，可能加载会慢一些，请您耐心等耐加载，小站会继续不断改进的。最后感谢您的访问。"
         var personBox = document.getElementById('person-box');
         var oul = personBox.getElementsByTagName('ul')[0];
         var ali = oul.getElementsByTagName('li');
